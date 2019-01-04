@@ -3,7 +3,7 @@ import java.util.ArrayList;
 // Assignment: WanderlustBoat
 // Author: George Hatch
 // Date:   Aug 25, 2018
-// Email:  Powhound@rams.colostate.edu
+// Email:  georgehatch91@gmail.com
 
 public class Boat {
 	private int numPeople =0;
