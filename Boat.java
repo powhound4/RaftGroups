@@ -9,19 +9,17 @@ public class Boat {
 	private int numPeople =0;
 	private static int totPeople=0;
 	private static int boatNum;
-	//private static int prevBoatNum;
 	private String GroupNames = "";
 	private boolean isFull;
-	//private int spotsLeft;
 	private ArrayList<ArrayList<Party>> parties = new ArrayList<ArrayList<Party>>();
 	
+	//constructor for Boat takes an arraylist of all the parties and then builds the group
 	public Boat(ArrayList<Party> party){		
 		parties.add(party);
 		buildGroupNames(party);
 	}
-	
+	//builds a string so toString() prints properly
 	private void buildGroupNames(ArrayList<Party> party){
-			//System.out.println("party size = " + party.size());
 			if (party.size() == 1){
 				GroupNames+=party.get(0).getName();
 				numPeople+=party.get(0).getSize();
@@ -29,17 +27,11 @@ public class Boat {
 			}
 			if(party.size() >= 2){
 				for(int t = party.size()-1; t>=0; --t){
-					//System.out.println("party name = " + party.get(t).getName());
-					//System.out.println("t = " + t);
-					//System.out.println("party size = " + party.size());
-
 					if (t > 0){
 						GroupNames+=party.get(t).getName() + " & ";
 						numPeople+=party.get(t).getSize();
 					}
-					
 					if(t == 0){
-						//System.out.println("party name = " + party.get(t).getName());
 						GroupNames+=party.get(t).getName();
 						numPeople+=party.get(t).getSize();
 					}
@@ -56,7 +48,7 @@ public class Boat {
 	public boolean isFull(){
 		return this.isFull;
 	}
-	
+	//increments number of people in boat by the number passed in
 	public void incNumPeople(int inc){
 		this.numPeople+= inc;
 	}
@@ -75,7 +67,6 @@ public class Boat {
 	public int getTotPeople(){
 		return totPeople;
 	}
-	
 	public ArrayList<ArrayList<Party>> getParties(){
 		return parties;
 	}
