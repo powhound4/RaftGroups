@@ -29,7 +29,7 @@ public class Trip implements Iterator<Party> {
 		System.out.println(Boats.toString());
 		System.out.println("Total # of People = " + Boats.get(0).getTotPeople());
 	}
-	
+	//reads in file does not account for party description yet format is (name #)
 	private void ReadFile(String line){
 		iterS = new Scanner(line);
 		if(line.contains("TripSheet.txt")){
